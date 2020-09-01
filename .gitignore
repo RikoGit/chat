@@ -1,0 +1,7 @@
+node_modules
+
+# Editors
+.vscode
+
+# Build
+static/build
