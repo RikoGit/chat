@@ -1,82 +1,47 @@
-// Firebase App (the core Firebase SDK) is always required and must be listed first
 import * as firebase from "firebase/app";
+import React, { useState } from "react";
 
-import React, { useState, useEffect } from "react";
 import styles from "./styles.css";
 
 const Form = () => {
   const [message, setMessage] = useState("");
   const [user, setUser] = useState("user");
-  const [isValid, setIsValid] = useState(true);
-
-  const [messages, setMessages] = useState([]);
-
-  useEffect(() => {
-    const messagesRef = firebase.database().ref("messages/");
-    messagesRef.on("child_added", (data) =>
-      addMessageElement(
-        data.key,
-        data.val().user,
-        data.val().message,
-        data.val().date
-      )
-    );
-  }, []);
-
-  const addMessageElement = (key, user, message, data) => {
-    const newMessages = messages;
-    newMessages.push({ key, user, message, data });
-    newMessages.map((message) => ({ ...message }));
-
-    setMessages([...newMessages]);
-  };
-
-  const validateForm = () => {
-    // setIsValid(0);
-    // console.log(isValid);
-  };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    validateForm();
-    // console.log(isValid);
-    if (!isValid) return;
-
-    const date = Date.now();
-    let messagesRef = firebase.database().ref("messages");
-    let newMessage = messagesRef.push();
-    newMessage.set({
-      user,
-      message,
-      date,
-    });
+    if (message) {
+      const date = Date.now();
+      let messagesRef = firebase.database().ref("messages");
+      let newMessage = messagesRef.push();
+      newMessage.set({
+        user,
+        message,
+        date,
+      });
+      setMessage("");
+    }
   };
 
   return (
-    <div>
+    <div className={styles.form}>
       <form action="#" onSubmit={(event) => onSubmit(event)}>
-        <label>
+        <label className={styles.label}>
           Представьтесь
           <input
+            className={styles.input}
             value={user}
-            onChange={(value) => setUser(event.target.value)}
+            onChange={(value) => setUser(event.target.value.replace(/\s/g, ""))}
           ></input>
         </label>
         <textarea
+          className={styles.textarea}
           value={message}
           onChange={(value) => setMessage(event.target.value)}
         >
           {message}
         </textarea>
-        <button>Отправить</button>
+        <button className={styles.button}>Отправить</button>
       </form>
-      <div className={styles.messages}>
-        {messages.map((message) => (
-          <div className={styles.message}>
-            {message.user} {message.message} {message.data}
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

@@ -1,0 +1,43 @@
+.messages {
+  margin: 0 20px 0 20px;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+}
+.user {
+  padding: 2px 0 0 0;
+  position: absolute;
+  left: 0;
+  width: 70px;
+  text-align: right;
+  color: #fbb367;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.message {
+  position: relative;
+  margin: 3px 0;
+  padding: 0 20px 0 78px;
+  font-size: 14px;
+  align-self: flex-end;
+  background: #95a9a6;
+  border-radius: 5px;
+}
+.message__body {
+  margin: 3px 0 0;
+  padding: 7px;
+  background: #dde6dd;
+  border-radius: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.date {
+  padding: 1px 5px 3px 5px;
+  color: #638a84;
+  font-size: 11px;
+  text-align: right;
+}

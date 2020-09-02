@@ -1,17 +1,8 @@
-// Firebase App (the core Firebase SDK) is always required and must be listed first
 import * as firebase from "firebase/app";
-
-// If you enabled Analytics in your project, add the Firebase SDK for Analytics
-// import "firebase/analytics";
-
-// Add the Firebase products that you want to use
-// import "firebase/auth";
-// import "firebase/firestore";
 import "firebase/database";
-//import "firebase/storage";
-
 import React, { useState } from "react";
 
+import Messages from "../Messages/index.jsx";
 import Form from "../Form/index.jsx";
 import styles from "./styles.css";
 
@@ -28,7 +19,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const App = () => (
-  <div>
+  <div className={styles.root}>
+    <Messages />
     <Form />
   </div>
 );
