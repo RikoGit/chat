@@ -1,11 +1,12 @@
 .messages {
   margin: 0 20px 0 20px;
-  padding: 0;
+  padding: 0 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: auto;
+  background: #a4b1ae;
 }
 .user {
   padding: 2px 0 0 0;
@@ -20,11 +21,11 @@
 }
 .message {
   position: relative;
-  margin: 3px 0;
+  margin: 3px 20px 3px 0;
   padding: 0 20px 0 78px;
   font-size: 14px;
   align-self: flex-end;
-  background: #95a9a6;
+  background: #9caba8;
   border-radius: 5px;
 }
 .message__body {

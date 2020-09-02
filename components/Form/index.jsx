@@ -23,7 +23,7 @@ const Form = () => {
   };
 
   return (
-    <div className={styles.form}>
+    <div className={styles.root}>
       <form action="#" onSubmit={(event) => onSubmit(event)}>
         <label className={styles.label}>
           Представьтесь

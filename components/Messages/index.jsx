@@ -19,6 +19,13 @@ const Messages = () => {
     );
   }, []);
 
+  useEffect(() => {
+    messagesContainerRef.current.scroll(
+      0,
+      messagesContainerRef.current.scrollHeight
+    );
+  }, [messages]);
+
   /**
    * @param {Object} date new Date Object
    */
@@ -42,10 +49,6 @@ const Messages = () => {
     newMessages.push({ key, user, message, date: dateToString });
     newMessages.map((message) => ({ ...message }));
     setMessages([...newMessages]);
-    messagesContainerRef.current.scroll(
-      0,
-      messagesContainerRef.current.scrollHeight
-    );
   };
 
   return (
