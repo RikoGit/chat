@@ -9,20 +9,25 @@
   background: #a4b1ae;
 }
 .user {
-  padding: 2px 0 0 0;
+  padding: 0 5px;
   position: absolute;
-  left: 0;
+  left: 3px;
   width: 70px;
   text-align: right;
   color: #fbb367;
   font-size: 12px;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 24px;
+  line-height: 24px;
+  margin-top: -3px;
+  background: #587370;
+  border-radius: 5px;
 }
 .message {
   position: relative;
   margin: 3px 20px 3px 0;
-  padding: 0 20px 0 78px;
+  padding: 0 20px 0 86px;
   font-size: 14px;
   align-self: flex-end;
   background: #9caba8;
