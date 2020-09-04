@@ -45,24 +45,24 @@ const Messages = () => {
    */
   const addMessageElement = (key, user, message, date) => {
     const dateToString = dateToPrettyString(new Date(date));
-    const newMessages = messages;
-    newMessages.push({ key, user, message, date: dateToString });
-    newMessages.map((message) => ({ ...message }));
-    setMessages([...newMessages]);
+    messages.push({ key, user, message, date: dateToString });
+    setMessages([...messages]);
   };
 
   return (
-    <div className={styles.messages} ref={messagesContainerRef}>
+    <ul className={styles.messages} ref={messagesContainerRef}>
       {messages.map((message) => (
-        <div className={styles.message}>
-          <div className={styles.message__body}>
-            <div className={styles.user}>{message.user}</div>
-            {message.message}
+        <li className={styles.message}>
+          <div className={styles.message__info}>
+            <div className={styles.message__body}>
+              <span className={styles.user}>{message.user}</span>
+              {message.message}
+            </div>
           </div>
           <div className={styles.date}>{message.date}</div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 export default Messages;

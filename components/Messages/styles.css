@@ -1,6 +1,7 @@
 .messages {
-  margin: 0 20px 0 20px;
-  padding: 0 0;
+  margin: 0;
+  padding: 0 20px;
+  list-style-type: none;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -9,29 +10,28 @@
   background: #a4b1ae;
 }
 .user {
-  padding: 0 5px;
-  position: absolute;
-  left: 3px;
-  width: 70px;
-  text-align: right;
+  margin: 0 3px 0 0;
+  padding: 3px 5px;
   color: #fbb367;
   font-size: 12px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  height: 24px;
-  line-height: 24px;
-  margin-top: -3px;
-  background: #587370;
+  line-height: 17px;
+  background: #69a79f;
   border-radius: 5px;
+  white-space: nowrap;
 }
 .message {
   position: relative;
-  margin: 3px 20px 3px 0;
-  padding: 0 20px 0 86px;
+  margin: 3px 0 3px 0;
+  padding: 0 3px;
   font-size: 14px;
   align-self: flex-end;
   background: #9caba8;
   border-radius: 5px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.message__info {
+  position: relative;
 }
 .message__body {
   margin: 3px 0 0;
@@ -43,7 +43,7 @@
 }
 .date {
   padding: 1px 5px 3px 5px;
-  color: #638a84;
+  color: #5a7773;
   font-size: 11px;
   text-align: right;
 }
