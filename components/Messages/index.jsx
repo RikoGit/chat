@@ -1,5 +1,6 @@
 import * as firebase from "firebase/app";
 import React, { useState, useEffect, useRef } from "react";
+import uniqolor from "uniqolor";
 
 import styles from "./styles.css";
 
@@ -53,11 +54,14 @@ const Messages = () => {
     <ul className={styles.messages} ref={messagesContainerRef}>
       {messages.map((message) => (
         <li className={styles.message}>
-          <div className={styles.message__info}>
-            <div className={styles.message__body}>
-              <span className={styles.user}>{message.user}</span>
-              {message.message}
-            </div>
+          <div className={styles.message__body}>
+            <span
+              className={styles.user}
+              style={{ color: uniqolor(message.user).color }}
+            >
+              {message.user}
+            </span>
+            : <span className={styles.text}>{message.message}</span>
           </div>
           <div className={styles.date}>{message.date}</div>
         </li>

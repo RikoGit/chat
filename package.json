@@ -28,7 +28,8 @@
   "dependencies": {
     "firebase": "^7.19.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "uniqolor": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
