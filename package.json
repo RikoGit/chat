@@ -19,6 +19,7 @@
     "online"
   ],
   "type": "module",
+  "private": true,
   "author": "RikoGit",
   "license": "MIT",
   "bugs": {

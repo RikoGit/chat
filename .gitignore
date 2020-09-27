@@ -4,4 +4,4 @@ node_modules
 .vscode
 
 # Build
-static/build
+static/index.js
